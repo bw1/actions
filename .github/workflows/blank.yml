@@ -8,7 +8,9 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@master
+    - name: install irssi
+      run: sudo apt-get irssi
     - name: Run a one-line script
       run: echo Hello, world!
     - name: Run a multi-line script
