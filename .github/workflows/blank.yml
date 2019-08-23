@@ -10,9 +10,11 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: install irssi
-      run: sudo apt-get install irssi
+      run: sudo apt-get -q install irssi
+    - name: clone irssi-scripts
+      run: git -q clone https://github.com/bw1/scripts.irssi.org.git
     - name: Run a one-line script
-      run: echo Hello, world!
+      run: echo Hello, world! $PWD
     - name: Run a multi-line script
       run: |
         echo Add other actions to build,
