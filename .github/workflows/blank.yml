@@ -10,7 +10,7 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: install irssi
-      run: sudo apt-get irssi
+      run: sudo apt-get install irssi
     - name: Run a one-line script
       run: echo Hello, world!
     - name: Run a multi-line script
