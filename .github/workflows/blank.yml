@@ -12,7 +12,7 @@ jobs:
     - name: install irssi
       run: sudo apt-get -q install irssi
     - name: clone irssi-scripts
-      run: git -q clone https://github.com/bw1/scripts.irssi.org.git
+      run: git clone -q https://github.com/bw1/scripts.irssi.org.git
     - name: Run a one-line script
       run: echo Hello, world! $PWD
     - name: Run a multi-line script
