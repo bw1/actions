@@ -15,9 +15,25 @@ jobs:
       run: cd;git clone -qq https://github.com/bw1/scripts.irssi.org.git
     - name: Run a one-line script
       run: echo Hello, world! $PWD
-    - name: ls
-      run: cd ~;ls -R
+      #- name: ls
+      #run: cd ~;ls -R
     - name: Run a multi-line script
       run: |
         echo Add other actions to build,
         echo test, and deploy your project.
+    - name: the scret
+      env:
+        sec: ${{ secrets.MYSECRET }}
+      run: |
+        echo $sec > .secfile
+    - name: see the scret
+      run: |
+        md5sum .secfile > secsum
+        ls -l .secfile > secsize
+        cat secsum
+        cat secsize
+    - name: see the scret 2
+      env:
+        sec: ${{ secrets.MYSECRET }}
+      run: |
+        perl printsec.pl
